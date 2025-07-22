@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS histories;
+
+USE histories;
+
+CREATE TABLE IF NOT EXISTS search_history (
+      id BIGINT PRIMARY KEY AUTO_INCREMENT,
+      keyword VARCHAR(255) NOT NULL,
+      search_time DATETIME NOT NULL
+);
