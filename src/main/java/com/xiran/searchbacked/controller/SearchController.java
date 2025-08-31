@@ -13,7 +13,7 @@ public class SearchController {
     private BingSearchService bingSearchService;
 
     @PostMapping("/search")
-    @CrossOrigin(origins = "http://localhost:5173", maxAge = 3600)
+    @CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
     public List<String> search(@RequestBody String keyword) {
         return bingSearchService.searchBing(keyword);
     }

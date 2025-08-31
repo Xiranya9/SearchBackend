@@ -1,7 +1,6 @@
 package com.xiran.searchbacked.service;
 
 import com.xiran.searchbacked.entity.SearchHistory;
-import com.xiran.searchbacked.jpa.SearchHistoryRepository;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.slf4j.Logger;
@@ -19,8 +18,8 @@ import java.util.List;
 @Service
 public class BingSearchService {
     private static final Logger log = LoggerFactory.getLogger(BingSearchService.class);
-    @Autowired
-    private SearchHistoryRepository searchHistoryRepository;
+//    @Autowired
+//    private SearchHistoryRepository searchHistoryRepository;
 
     public List<String> searchBing(String keyword) {
         List<String> results = new ArrayList<>();
@@ -48,8 +47,8 @@ public class BingSearchService {
             SearchHistory searchHistory = new SearchHistory();
             searchHistory.setKeyword(keyword);
             searchHistory.setSearchTime(LocalDateTime.now());
-            searchHistoryRepository.save(searchHistory);
-
+//            searchHistoryRepository.save(searchHistory);
+            log.info(searchHistory.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
